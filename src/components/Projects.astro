@@ -1,0 +1,39 @@
+---
+const projects = [
+  {
+    title: "Mi primer portafolio",
+    description: "Un sitio personal creado con Astro y CSS moderno.",
+    tech: "Astro • HTML • CSS"
+  },
+  {
+    title: "Landing Page Moderna",
+    description: "Diseño limpio con animaciones suaves y responsive.",
+    tech: "HTML • CSS • Responsive"
+  },
+  {
+    title: "Proyecto en proceso",
+    description: "Estoy trabajando en nuevas ideas y mejoras.",
+    tech: "Astro • UI Design"
+  }
+];
+---
+
+<section id="proyectos" class="projects reveal hidden">
+  <div class="container">
+    <h2 class="projects-title">Mis Proyectos</h2>
+
+   {projects.map((project) => (
+  <div class="project-card">
+    <h3>{project.title}</h3>
+    <p class="short">{project.description}</p>
+
+    <div class="extra-content">
+      <p>Este proyecto incluye diseño responsive, estructura un poco más moderna y algunas buenas prácticas.</p>
+    </div>
+
+    <button class="expand-btn">Ver más</button>
+  </div>
+))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,50 @@
+---
+interface Props {
+      title: string;
+      subtitle: string;
+      description: string;
+      ctaText: string;
+      ctaLink: string;
+
+}
+const { title, subtitle, description, ctaText, ctaLink } = Astro.props;
+---
+<section class="hero">
+   <div class="container">
+      <div class="hero-content">
+        <span class ="hero-subtitle">{subtitle}</span>
+        <h1>{title}</h1>
+        <p>{description}</p>
+        <button id="toggleProjects" class="btn">
+  {ctaText}
+</button>
+      </div>
+  </div>
+</section>
+
+<style>
+      .hero-cta {
+            display: online-block;
+            margin-top: 1.5 rem;
+            padding: 0.8rem 1.6rem;
+            border-radius: 8cap;
+            text-decoration: none;
+            font-weight: 600;
+            background: #ffffff;
+            color: #111111;
+      }
+
+      .hero-cta:hover {
+            opacity: 0.9;
+      }
+</style>
+
+
+
+
+
+
+
+
+
+

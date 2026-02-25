@@ -1,4 +1,5 @@
 ---
+import "../styles/global.css";
 const { title = "Mi sitio con Astro" } = Astro.props;
 ---
 
@@ -8,10 +9,79 @@ const { title = "Mi sitio con Astro" } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <title>{title}</title>
-      <link rel="stylesheet" href="/src/styles/global.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   </head>
+
   <body>
+
+    <div class="top-banner">
+      <div class="banner-track">
+        <div class="banner-item">𝕐𝕠𝕦-𝕔𝕒𝕟-𝕥𝕣𝕦𝕤𝕥-𝕞𝕖.👨‍💻</div>
+        <div class="banner-item">𝕐𝕠𝕦-𝕔𝕒𝕟-𝕥𝕣𝕦𝕤𝕥-𝕞𝕖.👨‍💻</div>
+        <div class="banner-item">𝕐𝕠𝕦-𝕔𝕒𝕟-𝕥𝕣𝕦𝕤𝕥-𝕞𝕖.👨‍💻</div>
+        <div class="banner-item">𝕐𝕠𝕦-𝕔𝕒𝕟-𝕥𝕣𝕦𝕤𝕥-𝕞𝕖.👨‍💻</div>
+        <div class="banner-item">𝕐𝕠𝕦-𝕔𝕒𝕟-𝕥𝕣𝕦𝕤𝕥-𝕞𝕖.👨‍💻</div>
+        <div class="banner-item">𝕐𝕠𝕦-𝕔𝕒𝕟-𝕥𝕣𝕦𝕤𝕥-𝕞𝕖.👨‍💻</div>
+        <div class="banner-item">𝕐𝕠𝕦-𝕔𝕒𝕟-𝕥𝕣𝕦𝕤𝕥-𝕞𝕖.👨‍💻</div>
+        <div class="banner-item">𝕐𝕠𝕦-𝕔𝕒𝕟-𝕥𝕣𝕦𝕤𝕥-𝕞𝕖.👨‍💻</div>
+      </div>
+    </div>
+
+    <body>
+
+  <div id="splash">
+    <img src="/logo.png" alt="Logo" class="logo" />
+  </div>
+
+  <slot />
+
+  <script>
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        document.getElementById("splash").classList.add("fade-out");
+      }, 3000);
+    });
+  </script>
+
+</body>
+
     <slot />
-  </body>
+    <script>
+  const reveals = document.querySelectorAll(".reveal");
+
+  function revealOnScroll() {
+    const windowHeight = window.innerHeight;
+
+    reveals.forEach((el) => {
+      const elementTop = el.getBoundingClientRect().top;
+
+      if (elementTop < windowHeight - 100) {
+        el.classList.add("active");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", revealOnScroll);
+  revealOnScroll();
+</script>
+
+<script>
+  const expandButtons = document.querySelectorAll(".expand-btn");
+
+  expandButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const card = btn.closest(".project-card");
+      card.classList.toggle("expanded");
+
+      btn.textContent = card.classList.contains("expanded")
+        ? "Ver menos"
+        : "Ver más";
+    });
+  });
+</script>
+</body>
 </html>
+
+
 

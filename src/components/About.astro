@@ -1,0 +1,49 @@
+---
+const { title, description} = Astro.props;
+const paragraphs = description.split('. ').filter(p => p.length > 0);
+---
+
+<section class="about reveal" id="about">
+  <div class="container">
+
+    <div class="about-grid">
+
+      <div class="about-left">
+        <span class="eyebrow">ABOUT ME</span>
+        <h2>{title}</h2>
+      </div>
+
+
+      <div class="about-right">
+        {paragraphs.map((text) => (
+          <p>
+            {text.trim().endsWith('.') ? text : text + '.'}
+          </p>
+        ))}
+        <button id="contactToggle">¡Contáctame!</button>
+
+        <div id="contactBox" class="contact-box">
+          <h3>¿Quieres contactarme?</h3>
+          <p>
+            Puedes hacerlo a traves de mis sociales, en Facebook me encuentras como Alexis Ceja, en Instagram como Alexis McRae, en Whatsapp puedes enviarme mensaje al 353-127-49-22 o enviándome un correo electrónico en angel28lex@gmail.com. Estoy abierto a nuevas oportunidades y colaboraciones.
+         </p>
+       </div>
+     </div>
+    </div>
+  </div>
+</section>
+
+<script is:inline>
+  const btn = document.getElementById("contactToggle");
+  const box = document.getElementById("contactBox");
+
+  if (btn && box) {
+    btn.addEventListener("click", () => {
+      if (box.style.display === "block") {
+        box.style.display = "none";
+      } else {
+        box.style.display = "block";
+      }
+    });
+  }
+</script>

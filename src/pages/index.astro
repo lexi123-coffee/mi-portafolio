@@ -1,8 +1,26 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import About from "../components/About.astro";
+import Projects from "../components/Projects.astro";
 ---
 
-<BaseLayout title="Inicio">
-  <h1>Hola, esta es mi página con Astro 🚀</h1>
-  <p>Ya conecté correctamente el layout y la página.</p>
+<BaseLayout title="Angel | Diseñador Web">
+  <Hero
+    subtitle="DESARROLADOR WEB EN PROCESO"
+    title="Estoy creando pequeños sitios con Astro"
+    description="Hoy en dia estoy enfocado en aprender Diseño Web, de igual forma, disfruto mucho el proceso de hacerlo."
+    ctaText="ver los proyectos"
+    ctaLink="#proyectos"
+  />
+  <About
+    title="Algo sobre mi:"
+    description="Actualmente estoy aprendiendo habilidades de diseño web, uso Astro para hacer más sencillo el proceso, también soy un chico apasionado en esto."
+  />
+  <Projects />
 </BaseLayout>
+
+
+
+
+
